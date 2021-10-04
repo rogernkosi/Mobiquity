@@ -14,7 +14,7 @@ import com.nkosi.roger.mobiquity.ui.CategoriesPresenter
  * @property view the view the presenter is based on
  * @constructor Injects the required dependencies
  */
-abstract class BasePresenter<out V : BaseView>(private val view: V) {
+abstract class BasePresenter<out V : BaseView>(protected val view: V) {
 
     /**
      * The injector used to inject required dependencies

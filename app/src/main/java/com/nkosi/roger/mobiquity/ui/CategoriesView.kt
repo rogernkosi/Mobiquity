@@ -10,7 +10,7 @@ interface CategoriesView: BaseView {
      * Updates the ui with the new categories
      * @param posts the list of categories that will replace existing ones
      */
-    fun showCategories(posts: List<Category>)
+    fun showCategories(products: List<Category>)
 
     /**
      * Displays an error in the view
