@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobiquity"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ProductsListActivity">
+        <activity android:name=".ui.product_list.ProductsListActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>

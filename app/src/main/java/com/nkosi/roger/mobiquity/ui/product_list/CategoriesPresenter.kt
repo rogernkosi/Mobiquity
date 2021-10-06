@@ -1,4 +1,4 @@
-package com.nkosi.roger.mobiquity.ui
+package com.nkosi.roger.mobiquity.ui.product_list
 
 import com.nkosi.roger.mobiquity.base.BasePresenter
 import com.nkosi.roger.mobiquity.network.CategoryApi

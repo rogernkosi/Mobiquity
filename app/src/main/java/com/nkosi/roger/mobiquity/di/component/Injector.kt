@@ -3,7 +3,7 @@ package com.nkosi.roger.mobiquity.di.component
 import com.nkosi.roger.mobiquity.base.BaseView
 import com.nkosi.roger.mobiquity.di.modules.ContextModule
 import com.nkosi.roger.mobiquity.di.modules.NetworkModule
-import com.nkosi.roger.mobiquity.ui.CategoriesPresenter
+import com.nkosi.roger.mobiquity.ui.product_list.CategoriesPresenter
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

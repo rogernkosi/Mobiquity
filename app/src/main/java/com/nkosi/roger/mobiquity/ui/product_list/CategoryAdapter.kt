@@ -1,4 +1,4 @@
-package com.nkosi.roger.mobiquity.ui
+package com.nkosi.roger.mobiquity.ui.product_list
 
 import android.view.LayoutInflater
 import android.view.View

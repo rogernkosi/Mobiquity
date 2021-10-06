@@ -1,4 +1,4 @@
-package com.nkosi.roger.mobiquity.ui
+package com.nkosi.roger.mobiquity.ui.product_list
 
 import androidx.annotation.StringRes
 import com.nkosi.roger.mobiquity.base.BaseView

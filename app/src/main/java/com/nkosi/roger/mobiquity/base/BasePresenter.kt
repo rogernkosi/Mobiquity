@@ -4,8 +4,7 @@ import com.nkosi.roger.mobiquity.di.component.DaggerInjector
 import com.nkosi.roger.mobiquity.di.component.Injector
 import com.nkosi.roger.mobiquity.di.modules.ContextModule
 import com.nkosi.roger.mobiquity.di.modules.NetworkModule
-import com.nkosi.roger.mobiquity.ui.CategoriesPresenter
-
+import com.nkosi.roger.mobiquity.ui.product_list.CategoriesPresenter
 
 /**
  * Base presenter any presenter of the application must extend. It provides initial injections and
