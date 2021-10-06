@@ -1,6 +1,5 @@
 package com.nkosi.roger.mobiquity.ui
 
-import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.base.BasePresenter
 import com.nkosi.roger.mobiquity.network.CategoryApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -29,8 +28,8 @@ class CategoriesPresenter(categoriesView: CategoriesView): BasePresenter<Categor
                 view.hideLoading()
             }
             .subscribe(
-                {it->view.showCategories(it)},
-                {it->view.showError(it.localizedMessage)}
+                { view.showCategories(it)},
+                { view.showError(it.localizedMessage!!)}
             )
     }
 

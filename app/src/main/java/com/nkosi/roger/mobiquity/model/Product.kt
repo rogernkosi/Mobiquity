@@ -1,6 +1,6 @@
 package com.nkosi.roger.mobiquity.model
 
-data class Products(
+data class Product(
 	val id: Int,
 	val categoryId: Int,
 	val name: String,

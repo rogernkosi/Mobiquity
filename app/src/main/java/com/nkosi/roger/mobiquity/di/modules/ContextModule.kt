@@ -16,7 +16,7 @@ object ContextModule {
     /**
      * Provides the Context
      * @param baseView the BaseView used to provides the context
-     * @return the Context to be provided
+     * @return the Context to be provideda
      */
     @Provides
     @JvmStatic
