@@ -10,6 +10,7 @@ import com.nkosi.roger.mobiquity.base.BaseActivity
 import com.nkosi.roger.mobiquity.model.Category
 import com.nkosi.roger.mobiquity.model.Product
 import com.nkosi.roger.mobiquity.ui.product_details.ProductDetailsActivity
+import kotlinx.android.synthetic.main.activity_products_list.*
 
 class ProductsListActivity: BaseActivity<CategoriesPresenter>(), CategoriesView {
 
@@ -53,11 +54,11 @@ class ProductsListActivity: BaseActivity<CategoriesPresenter>(), CategoriesView 
     }
 
     override fun showLoading() {
-        //TODO
+        loading_progressbar.show()
     }
 
     override fun hideLoading() {
-        //TODO
+        loading_progressbar.hide()
     }
 
     override fun navigateToDetailsActivity(product: Product) {
