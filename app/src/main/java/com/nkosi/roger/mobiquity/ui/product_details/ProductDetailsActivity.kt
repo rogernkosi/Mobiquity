@@ -2,18 +2,19 @@ package com.nkosi.roger.mobiquity.ui.product_details
 
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.base.BaseActivity
 import com.nkosi.roger.mobiquity.model.Product
 import com.nkosi.roger.mobiquity.utils.StringUtils
 import kotlinx.android.synthetic.main.activity_product_details.*
+import kotlinx.android.synthetic.main.activity_products_list.*
 
 class ProductDetailsActivity : BaseActivity<ProductPresenter>(), ProductView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
-
         presenter.onViewCreated()
     }
 
@@ -39,14 +40,14 @@ class ProductDetailsActivity : BaseActivity<ProductPresenter>(), ProductView {
     }
 
     override fun showError(error: String) {
-        TODO("Not yet implemented")
+        Snackbar.make(parent_product_list_view, error, Snackbar.LENGTH_LONG).show()
     }
 
     override fun showLoading() {
-        // loading
+        // do nothing
     }
 
     override fun hideLoading() {
-        // hide loading
+        // do nothing
     }
 }

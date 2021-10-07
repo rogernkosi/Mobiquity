@@ -5,6 +5,7 @@ import android.os.Bundle
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.base.BaseActivity
 import com.nkosi.roger.mobiquity.model.Category
@@ -50,7 +51,7 @@ class ProductsListActivity: BaseActivity<CategoriesPresenter>(), CategoriesView 
     }
 
     override fun showError(error: String) {
-        //TODO
+        Snackbar.make(parent_product_list_view, error, Snackbar.LENGTH_LONG).show()
     }
 
     override fun showLoading() {
