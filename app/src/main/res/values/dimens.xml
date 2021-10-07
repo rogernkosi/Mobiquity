@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="primary_margin">10dp</dimen>
+    <dimen name="secondary_margin">5dp</dimen>
+    <dimen name="primary_text_size">17sp</dimen>
+    <dimen name="thumbnail_size">70dp</dimen>
+    <dimen name="primary_border_size">1dp</dimen>
+    <dimen name="primary_radius">5dp</dimen>
+    <dimen name="details_image_height">450dp</dimen>
+    <dimen name="withd_none">0dp</dimen>
+</resources>
