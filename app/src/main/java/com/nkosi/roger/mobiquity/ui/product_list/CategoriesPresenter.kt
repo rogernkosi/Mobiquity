@@ -13,13 +13,13 @@ class CategoriesPresenter(categoriesView: CategoriesView): BasePresenter<Categor
     @Inject
     lateinit var categoryApi: CategoryApi
 
-    private var subscription: Disposable? = null
+    public var subscription: Disposable? = null
 
     /**
      * Loads the products from the API and presents them in the view when retrieved, or show error if
      * any.
      */
-    private fun loadProducts() {
+    public fun loadProducts() {
         view.showLoading()
         subscription = categoryApi
             .getCategories()
