@@ -1,6 +1,7 @@
 package com.nkosi.roger.mobiquity.ui.product_list
 
 import com.nkosi.roger.mobiquity.base.BasePresenter
+import com.nkosi.roger.mobiquity.model.Product
 import com.nkosi.roger.mobiquity.network.CategoryApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -33,6 +34,14 @@ class CategoriesPresenter(categoriesView: CategoriesView): BasePresenter<Categor
             )
     }
 
+    /**
+     *
+     * the view notifies the presenter about a click even occurred
+     *
+     */
+    fun onProductItemClicked(product: Product){
+        view.navigateToDetailsActivity(product)
+    }
 
     override fun onViewCreated() {
         loadProducts()

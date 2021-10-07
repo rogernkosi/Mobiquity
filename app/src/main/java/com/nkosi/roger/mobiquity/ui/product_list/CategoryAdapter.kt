@@ -1,5 +1,6 @@
 package com.nkosi.roger.mobiquity.ui.product_list
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.model.Category
+import com.nkosi.roger.mobiquity.model.Product
+import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.section_header.view.*
 
 /**
@@ -19,6 +23,8 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
      * The list of categories of the adapter
      */
     private var productCategory: List<Category> = listOf()
+
+    private var event: PublishSubject<Product> = PublishSubject.create()
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var category: TextView = itemView.food_category
@@ -44,6 +50,17 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
         val productAdapter  = ProductAdapter()
         productAdapter.populateProducts(productCategory[position].products)
         holder.products.adapter = productAdapter
+
+        val subscribe = productAdapter.getEvent().subscribe {
+            event.onNext(it)
+        }
+    }
+
+    /**
+     * Subscribe to this Observable. On event
+     */
+    fun getEvent(): Observable<Product> {
+        return event
     }
 
     override fun getItemCount(): Int {

@@ -1,22 +1,29 @@
 package com.nkosi.roger.mobiquity.ui.product_list
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.model.Product
 import com.nkosi.roger.mobiquity.utils.StringUtils
 import de.hdodenhof.circleimageview.CircleImageView
+import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.product_list.view.*
+
 
 /**
  * Adapter for the list of products per category
  *
  */
 class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    private var event: PublishSubject<Product> = PublishSubject.create()
 
     /**
      * The list of categories of the adapter
@@ -45,6 +52,17 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
             .centerCrop()
             .placeholder(R.drawable.ic_baseline_fastfood_24)
             .into(holder.productImage)
+
+        holder.itemView.setOnClickListener {
+            event.onNext(products[position])
+        }
+    }
+
+    /**
+     * Subscribe to this Observable. On event
+     */
+    fun getEvent(): Observable<Product> {
+        return event
     }
 
     override fun getItemCount(): Int {

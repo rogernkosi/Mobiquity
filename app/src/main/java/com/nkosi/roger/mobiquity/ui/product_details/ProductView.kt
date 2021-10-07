@@ -1,17 +1,18 @@
-package com.nkosi.roger.mobiquity.ui.product_list
+package com.nkosi.roger.mobiquity.ui.product_details
 
 import androidx.annotation.StringRes
 import com.nkosi.roger.mobiquity.base.BaseView
-import com.nkosi.roger.mobiquity.model.Category
 import com.nkosi.roger.mobiquity.model.Product
 
-interface CategoriesView: BaseView {
+interface ProductView: BaseView {
 
     /**
      * Updates the ui with the new categories
-     * @param products the list of categories that will replace existing ones
+     * @param product the list of categories that will replace existing ones
      */
-    fun showCategories(products: List<Category>)
+    fun showProduct(product: Product)
+
+    fun getData()
 
     /**
      * Displays an error in the view
@@ -36,7 +37,5 @@ interface CategoriesView: BaseView {
      * Hides the loading indicator of the view
      */
     fun hideLoading()
-
-    fun navigateToDetailsActivity(product: Product)
 
 }

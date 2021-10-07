@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Mobiquity</string>
     <string name="service_call_failure">Failed! Please check your internet connection and try again.</string>
+    <string name="product_details_image">product details image</string>
 </resources>

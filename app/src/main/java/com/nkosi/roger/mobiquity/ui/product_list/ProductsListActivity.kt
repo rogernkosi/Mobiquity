@@ -1,15 +1,17 @@
 package com.nkosi.roger.mobiquity.ui.product_list
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nkosi.roger.mobiquity.R
 import com.nkosi.roger.mobiquity.base.BaseActivity
 import com.nkosi.roger.mobiquity.model.Category
+import com.nkosi.roger.mobiquity.model.Product
+import com.nkosi.roger.mobiquity.ui.product_details.ProductDetailsActivity
 
-class ProductsListActivity : BaseActivity<CategoriesPresenter>(), CategoriesView {
+class ProductsListActivity: BaseActivity<CategoriesPresenter>(), CategoriesView {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
@@ -34,6 +36,8 @@ class ProductsListActivity : BaseActivity<CategoriesPresenter>(), CategoriesView
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapterCategoryAdapter
         presenter.onViewCreated()
+
+        adapterCategoryAdapter.getEvent().subscribe { presenter.onProductItemClicked(it) }
     }
 
     override fun instantiatePresenter(): CategoriesPresenter {
@@ -45,13 +49,20 @@ class ProductsListActivity : BaseActivity<CategoriesPresenter>(), CategoriesView
     }
 
     override fun showError(error: String) {
-        Log.e("error", error)
+        //TODO
     }
 
     override fun showLoading() {
-        Toast.makeText(this, "loading", Toast.LENGTH_SHORT).show()
+        //TODO
     }
 
     override fun hideLoading() {
+        //TODO
+    }
+
+    override fun navigateToDetailsActivity(product: Product) {
+        val intent = Intent(this, ProductDetailsActivity::class.java)
+        intent.putExtra("product", product)
+        startActivity(intent)
     }
 }
